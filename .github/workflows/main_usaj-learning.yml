@@ -53,5 +53,5 @@ jobs:
       with:
         app-name: 'usaj-learning-bicep'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_77c4dd477cde42fc800c157f924e7de6 }}
+        publish-profile: ${{ secrets.BICEPAPP_PROFILE }}
         package: .
