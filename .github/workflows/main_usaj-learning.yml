@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Set up .NET Core
-      uses: actions/setup-dotnet@v1.8.2
+      uses: actions/setup-dotnet@v2.1.0
       with:
         dotnet-version: '5.x'
         include-prerelease: false
@@ -29,7 +29,7 @@ jobs:
       run: dotnet publish usajlearning/usajlearning.csproj -c Release -o ${{env.DOTNET_ROOT}}/learning
 
     - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: .net-app
         path: ${{env.DOTNET_ROOT}}/learning
@@ -43,7 +43,7 @@ jobs:
 
     steps:
     - name: Download artifact from build job
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: .net-app
 
